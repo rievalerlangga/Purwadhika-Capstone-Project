@@ -61,7 +61,7 @@ def readData():
     
     -----------------------------------------------------------------
     ''')
-    subOption = input(  'Select Sub-Menu1-8!    ')
+    subOption = input(  'Select Sub-Menu 1-8!    ')
     if subOption == '1':
         if len(daftarKontakTeleponUpdate) == 0:
             print('\n   DATA TIDAK DITEMUKAN!   ')
@@ -169,7 +169,7 @@ def readData():
     elif subOption == '8':
             main_menu()
     else:
-        print('\n   INVALID ANSWER!   ')
+        print('\nPilihan tidak valid, silakan coba lagi.')
         readData()
 # ----------------------------------------------------------------------------------------------------------------------#
 ## FUNCTION CREATE ##
@@ -236,12 +236,12 @@ def updateData():
             print('\n   DATA TIDAK DITEMUKAN!   ')
             updateData()
     elif subOption == '2':
-        oldID = input('Masukkan ID Pemain yang ingin diubah nomor teleponnya: ')
+        oldPhoneNumber = input('Masukkan ID Pemain yang ingin diubah nomor teleponnya: ')
         newPhoneNumber = input('Masukkan Nomor Telepon Baru: ')
         found = False
         for player in daftarKontakTeleponUpdate:
-            if player['ID'] == oldID:
-                player['Phone Number']
+            if player['ID'] == oldPhoneNumber:
+                player['Phone Number'] = newPhoneNumber
                 print(f'\n Nomor Telepon Pemain Telah Berhasil Diubah menjadi {newPhoneNumber}! ')
                 updateData()
                 found = True
